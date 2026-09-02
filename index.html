@@ -15,10 +15,14 @@
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="bar" id="bar">
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
   <div class="bar-top">
     <span class="bar-mark">MR</span>
+    <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </label>
   </div>
-  <nav class="bar-nav" aria-label="Section index">
+  <nav class="bar-nav" id="bar-nav" aria-label="Section index">
     <ol>
       <li><a href="#home" class="bar-link" data-index="00"><span class="bar-label">Home</span></a></li>
       <li><a href="#about" class="bar-link" data-index="01"><span class="bar-label">About</span></a></li>
@@ -50,7 +54,7 @@
           </div>
         </div>
         <div class="hero-top-text">
-          <p class="eyebrow">00 — Index</p>
+          <p class="eyebrow"> Index</p>
           <h1 class="hero-title wave-text">
              <span class="letter">M</span><span class="letter">a</span><span class="letter">h</span><span class="letter">e</span><span class="letter">k</span> <span class="letter">R</span><span class="letter">a</span><span class="letter">w</span><span class="letter">a</span><span class="letter">t</span><br>
              <em><span class="letter">E</span><span class="letter">n</span><span class="letter">g</span><span class="letter">i</span><span class="letter">n</span><span class="letter">e</span><span class="letter">e</span><span class="letter">r</span><span class="letter">i</span><span class="letter">n</span><span class="letter">g</span> <span class="letter">s</span><span class="letter">t</span><span class="letter">u</span><span class="letter">d</span><span class="letter">e</span><span class="letter">n</span><span class="letter">t</span><span class="letter">.</span></em>
@@ -80,7 +84,7 @@
 
   <section id="about" class="section" aria-label="About me">
     <div class="section-inner">
-      <p class="eyebrow">01 — About</p>
+      <p class="eyebrow"> About</p>
       <h2 class="section-title">A little about myself.</h2>
       <div class="about-grid">
         <div class="about-text">
@@ -106,7 +110,7 @@
 
   <section id="skills" class="section" aria-label="Skills">
     <div class="section-inner">
-      <p class="eyebrow">02 — Skills</p>
+      <p class="eyebrow"> Skills</p>
       <h2 class="section-title">Tools I reach for.</h2>
 
       <div class="skills">
@@ -140,7 +144,7 @@
   
   <section id="projects" class="section" aria-label="Projects">
     <div class="section-inner">
-      <p class="eyebrow">03 — Projects</p>
+      <p class="eyebrow"> Projects</p>
       <h2 class="section-title">Selected work.</h2>
 
       <div class="project-list">
@@ -156,6 +160,8 @@
               <li class="tag">HTML5</li>
               <li class="tag">CSS3</li>
             </ul>
+            <div class="project-links">
+              <a href="https://github.com/mahek080106/zomato" target="_blank" rel="noopener noreferrer" class="project-link">View project in github</a>
             
           </div>
         </article>
@@ -167,7 +173,7 @@
   
   <section id="education" class="section" aria-label="Education">
     <div class="section-inner">
-      <p class="eyebrow">04 — Education</p>
+      <p class="eyebrow">Education</p>
       <h2 class="section-title">Background.</h2>
 
       <ol class="timeline">
@@ -218,7 +224,7 @@
   
   <section id="contact" class="section section-contact" aria-label="Contact">
     <div class="section-inner">
-      <p class="eyebrow">05 — Contact</p>
+      <p class="eyebrow">Contact</p>
       <h2 class="section-title">Let's talk.</h2>
       <p class="contact-lede">
         The fastest way to reach me is email. I usually reply within a day
@@ -226,13 +232,17 @@
       </p>
 
       <div class="contact-grid">
-        <a class="contact-card" href="mailto:hello@ananyarao.dev">
+        <a class="contact-card" href="mailto:mahek080106@gmail.com">
           <span class="mono-label">Email</span>
           <span class="contact-value">mahek080106@gmail.com</span>
         </a>
-        <a class="contact-card" href="https://github.com/example" target="_blank" rel="noopener noreferrer">
+        <a class="contact-card" href="https://github.com/mahek080106" target="_blank" rel="noopener noreferrer">
           <span class="mono-label">GitHub</span>
           <span class="contact-value">github.com/mahek080106</span>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/mahek-rawat-94a9443b8" target="_blank" rel="noopener noreferrer">
+          <span class="mono-label">LinkedIn</span>
+          <span class="contact-value">linkedin.com/MahekRawat</span>
         </a>
       </div>
     </div>

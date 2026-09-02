@@ -70,6 +70,44 @@ body {
 
 .bar-top {
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+#menu-toggle:checked ~ .bar-top .hamburger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+#menu-toggle:checked ~ .bar-top .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .bar-top .hamburger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 .bar-mark {
@@ -166,8 +204,8 @@ main {
 }
 
 .section {
-    min-height: 100vh;
-    padding: 100px 9%;
+    min-height: auto;
+    padding: 70px 9%;
     border-bottom: 1px solid var(--border);
     display: flex;
     align-items: center;
@@ -182,7 +220,7 @@ main {
 
 .eyebrow {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 25px;
     color: var(--accent);
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -229,7 +267,6 @@ main {
     color: var(--accent);
 }
 
-/* propagate a fading wave to the next couple of letters */
 .wave-text .letter:hover + .letter {
     transform: translateY(-8px);
     transition-delay: 0.05s;
@@ -416,7 +453,7 @@ main {
 .skill2:hover,
 .skill3:hover {
     transform: translateY(-5px);
-    background: white;
+    background: rgb(69, 65, 65);
 }
 
 .skill1title,
@@ -426,6 +463,7 @@ main {
     font-size: 27px;
     font-weight: 500;
     margin-bottom: 25px;
+    color: var(--accent);
 }
 
 .tag-list {
@@ -465,6 +503,32 @@ main {
     padding-left: 15px;
 }
 
+.project-link {
+    position: relative;
+    top: 20px;
+    text-decoration: none;
+    color: var(--text);
+    padding-top: 2px;
+}
+project-link {
+    position: relative;
+}
+
+.project-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.project-link:hover::after {
+    width: 100%;
+}
+
 .project-index {
     font-family: var(--mono);
     font-size: 12px;
@@ -488,6 +552,7 @@ main {
 .tag-list-small .tag {
     font-size: 10px;
     padding: 5px 9px;
+   
 }
 
 .timeline {
@@ -611,9 +676,10 @@ main {
         gap: 20px;
     }
 
-    .section {
-        padding: 80px 6%;
+     .section {
+        padding: 60px 6%;
     }
+
 
     .hero-top {
         gap: 30px;
@@ -649,10 +715,11 @@ main {
         flex-wrap: wrap;
         align-items: flex-start;
         padding: 16px 7%;
-        row-gap: 12px;
+        row-gap: 0;
     }
 
     .bar-top {
+        width: 100%;
         margin-bottom: 0;
     }
 
@@ -660,26 +727,44 @@ main {
         font-size: 24px;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     .bar-nav {
         order: 3;
+        display: block;
+        flex: none;
         width: 100%;
-        justify-content: flex-start;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .bar-nav.open,
+    #menu-toggle:checked ~ .bar-nav {
+        max-height: 400px;
+        margin-top: 16px;
     }
 
     .bar-nav ol {
         width: 100%;
-        overflow-x: auto;
-        padding-bottom: 5px;
-        gap: 18px;
+        flex-direction: column;
+        gap: 0;
+        padding-bottom: 12px;
+        border-top: 1px solid #2a2a2a;
     }
 
     .bar-nav li {
         flex-shrink: 0;
+        width: 100%;
     }
 
     .bar-link {
         gap: 5px;
-        font-size: 12px;
+        font-size: 15px;
+        padding: 14px 2px;
+        width: 100%;
     }
 
     .bar-num {
@@ -694,7 +779,7 @@ main {
         padding-top: 0;
     }
 
-    /* HERO */
+   
 
     .hero {
         min-height: 90vh;
@@ -742,14 +827,11 @@ main {
         display: none;
     }
 
-    /* SECTION HEADINGS */
-
     .section-title {
         font-size: 48px;
         margin-bottom: 40px;
     }
 
-    /* ABOUT */
 
     .about-grid {
         display: block;
@@ -758,8 +840,6 @@ main {
     .about-text {
         font-size: 16px;
     }
-
-    /* SKILLS */
 
     .skills {
         grid-template-columns: 1fr;
@@ -795,8 +875,6 @@ main {
         font-size: 28px;
     }
 
-    /* CONTACT */
-
     .contact-grid {
         grid-template-columns: 1fr;
     }
@@ -804,9 +882,7 @@ main {
     .contact-card {
         min-height: 110px;
     }
-
-    /* FOOTER */
-
+    
     .footer-inner {
         flex-direction: column;
         gap: 8px;
@@ -825,10 +901,6 @@ main {
 
     .section-title {
         font-size: 42px;
-    }
-
-    .bar-nav ol {
-        gap: 13px;
     }
 
     .bar-label {
